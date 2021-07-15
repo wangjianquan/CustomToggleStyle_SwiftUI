@@ -257,7 +257,7 @@ struct BgGradient_BottomTextStyle: ToggleStyle {
                     .frame(width: 60, height: 30)
                     .background(
                         Capsule()
-                            .foregroundColor(.white.opacity(configuration.isOn ? 0.0 : 0.2))
+                            .foregroundColor(Color.white.opacity(configuration.isOn ? 0.0 : 0.2))
                             .padding(.all, 2)
                         )
                 )
@@ -388,7 +388,7 @@ struct ImageToggleStyle: ToggleStyle {
                         .resizable()
                         .aspectRatio(contentMode: .fill)
                         .frame(width: 24, height: 24, alignment: .center)
-                        .rotationEffect(.init(degrees: configuration.isOn ? 360 : 0))
+                        .rotationEffect(.init(degrees: configuration.isOn ? 120 : 0))
                         .background(Color.white)
                         .cornerRadius(15)
                         .offset(x: configuration.isOn ? 9 : -9, y: 0)
@@ -418,7 +418,7 @@ struct OFFTextToggleStyle: ToggleStyle {
             Text(onName)
                 .font(.system(size: 12, weight: .bold))
                 .fontWeight(.bold)
-                .foregroundColor(Color(red: 111/255, green: 111/255, blue: 111/255))
+                .foregroundColor(configuration.isOn ? Color(red: 125/255, green: 124/255, blue: 125/255) : Color.black)
             
             Capsule()
                 .foregroundColor(configuration.isOn ? Color(red: 113/255, green: 224/255, blue: 236/255) : Color.groupTableViewColor)
@@ -427,7 +427,7 @@ struct OFFTextToggleStyle: ToggleStyle {
                     Image((!onImgName.isEmpty && !offImgName.isEmpty) ? (configuration.isOn ? onImgName : offImgName) : imgName)
                         .resizable()
                         .aspectRatio(contentMode: .fill)
-                        .rotationEffect(.init(degrees: configuration.isOn ? 360 : 0))
+                        .rotationEffect(.init(degrees: configuration.isOn ? 120 : 0))
                         .frame(width: 25, height: 25)
                         .background(Color.white)
                         .cornerRadius(15)
@@ -438,7 +438,8 @@ struct OFFTextToggleStyle: ToggleStyle {
                 .onTapGesture { configuration.isOn.toggle() }
             Text(offName)
                 .font(.system(size: 12, weight: .bold))
-                .foregroundColor(configuration.isOn ? Color(red: 141/255, green: 213/255, blue: 222/255) : Color(red: 177/255, green: 177/255, blue: 177/255))
-        }
+                .foregroundColor(configuration.isOn ? Color(red: 125/255, green: 206/255, blue: 248/255) : Color(red: 170/255, green: 200/255, blue: 219/255))
+                .shadow(color: configuration.isOn ? Color(red: 74/255, green: 206/255, blue: 248/255) : Color.clear, radius: 10, x: 0.0, y: 0.0)
+        }.background(configuration.isOn ? Color(red: 60/255, green: 59/255, blue: 60/255) : Color(red: 213/255, green: 223/255, blue: 231/255))
     }
 }

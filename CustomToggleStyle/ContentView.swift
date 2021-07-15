@@ -64,7 +64,6 @@ struct ContentView: View {
                         Text("开关图片")
                     }).toggleStyle(
                         ImageToggleStyle(onImgName:"Earth_night", offImgName:"Earth_day")
-                        //ImageToggleStyle()
                     )
                     
                 }

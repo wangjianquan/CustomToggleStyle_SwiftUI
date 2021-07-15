@@ -5,11 +5,11 @@
       "scale" : "1x"
     },
     {
-      "filename" : "Earth_day.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "Earth_day.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
